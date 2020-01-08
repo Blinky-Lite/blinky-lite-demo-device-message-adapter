@@ -114,8 +114,30 @@
         "id": "79250bf3.365cc4",
         "type": "mqtt-broker",
         "z": "",
-        "name": "MQTT Broker",
-        "broker": "$(MQTTSERVERIP)",
+        "name": "MQTT Broker 1",
+        "broker": "$(MQTTSERVERIP1)",
+        "port": "1883",
+        "clientid": "$(MQTTCLIENTID)",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "879890f3.4ffd4",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "MQTT Broker 2",
+        "broker": "$(MQTTSERVERIP2)",
         "port": "1883",
         "clientid": "$(MQTTCLIENTID)",
         "usetls": false,
@@ -139,7 +161,7 @@
         "name": "Teensy",
         "serial": "21ff842d.62f36c",
         "x": 70,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "d5761f6c.c46e6"
@@ -150,13 +172,13 @@
         "id": "93049b70.2dc5c8",
         "type": "mqtt out",
         "z": "5f562f66.a301e",
-        "name": "Publish Readings",
+        "name": "Publish Readings 1",
         "topic": "$(MQTTPUBLISHTOPIC)",
         "qos": "0",
         "retain": "false",
         "broker": "79250bf3.365cc4",
         "x": 890,
-        "y": 280,
+        "y": 320,
         "wires": []
     },
     {
@@ -173,7 +195,7 @@
         "id": "8cda9011.eab33",
         "type": "mqtt in",
         "z": "5f562f66.a301e",
-        "name": "Subscribe Settings",
+        "name": "Subscribe Settings 1",
         "topic": "$(MQTTSUBSCRIBETOPIC)",
         "qos": "0",
         "datatype": "auto",
@@ -248,7 +270,7 @@
         "once": true,
         "onceDelay": "5",
         "x": 120,
-        "y": 120,
+        "y": 180,
         "wires": [
             [
                 "f3f3f15.081c31"
@@ -268,7 +290,7 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 140,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "163af492.5e952b"
@@ -286,7 +308,7 @@
         "sendError": false,
         "encoding": "none",
         "x": 360,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "53c95857.5f3d68"
@@ -302,7 +324,7 @@
         "action": "",
         "pretty": false,
         "x": 530,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "30f384ea.cf21fc"
@@ -318,7 +340,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 720,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "f3f3f15.081c31"
@@ -334,7 +356,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 250,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "fafe8611.1f12e8"
@@ -350,10 +372,11 @@
         "outputs": 1,
         "noerr": 0,
         "x": 680,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
-                "93049b70.2dc5c8"
+                "93049b70.2dc5c8",
+                "6ec0c38f.0ee52c"
             ]
         ]
     },
@@ -366,7 +389,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 470,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "cd04ce51.35497"
@@ -385,7 +408,7 @@
         "oldrc": false,
         "name": "",
         "x": 280,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "afd71a05.ebd4e8"
@@ -407,7 +430,7 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 120,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "f69c600b.9542"
@@ -423,7 +446,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 460,
-        "y": 360,
+        "y": 400,
         "wires": [
             []
         ]
@@ -445,17 +468,33 @@
         ]
     },
     {
-        "id": "6919e88f.843568",
-        "type": "debug",
+        "id": "6ec0c38f.0ee52c",
+        "type": "mqtt out",
         "z": "5f562f66.a301e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 950,
-        "y": 80,
+        "name": "Publish Readings 2",
+        "topic": "$(MQTTPUBLISHTOPIC)",
+        "qos": "0",
+        "retain": "false",
+        "broker": "879890f3.4ffd4",
+        "x": 890,
+        "y": 380,
         "wires": []
+    },
+    {
+        "id": "9f5707f7.ca9788",
+        "type": "mqtt in",
+        "z": "5f562f66.a301e",
+        "name": "Subscribe Settings 2",
+        "topic": "$(MQTTSUBSCRIBETOPIC)",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "879890f3.4ffd4",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "dc36009e.fdeeb"
+            ]
+        ]
     }
 ]
