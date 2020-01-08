@@ -393,8 +393,7 @@
         "y": 320,
         "wires": [
             [
-                "cd04ce51.35497",
-                "5c89a0f6.8d21a"
+                "cd04ce51.35497"
             ]
         ]
     },
@@ -498,19 +497,5 @@
                 "dc36009e.fdeeb"
             ]
         ]
-    },
-    {
-        "id": "5c89a0f6.8d21a",
-        "type": "debug",
-        "z": "5f562f66.a301e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 670,
-        "y": 480,
-        "wires": []
     }
 ]
