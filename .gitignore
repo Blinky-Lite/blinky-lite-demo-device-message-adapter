@@ -17,4 +17,3 @@ node_modules
 .config.json
 *.backup
 
-initSettings.json
