@@ -510,23 +510,8 @@
         "wires": [
             [
                 "93049b70.2dc5c8",
-                "6ec0c38f.0ee52c",
-                "5f26f55b.a5f87c"
+                "6ec0c38f.0ee52c"
             ]
         ]
-    },
-    {
-        "id": "5f26f55b.a5f87c",
-        "type": "debug",
-        "z": "5f562f66.a301e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 880,
-        "y": 480,
-        "wires": []
     }
 ]
